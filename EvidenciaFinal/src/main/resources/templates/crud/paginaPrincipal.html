@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Lista Provincias</title>
+<style type="text/css">
+* {
+	font-family: Arial;
+	text-align: center;
+}
+
+table {
+	width: 50%;
+	margin-left:40%;
+	font-size: 26px;
+}
+
+th {
+	text-align: center;
+  background-color:white;
+  height:50px;
+}
+
+td {
+	font-size: 36px;
+  background-color:#D6CCD4;
+}
+
+h3 {
+	margin-left:220px;
+	font-size: 20px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; 
+  font-size: 20px; 
+  padding: 0px 10px;
+}
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+h1 {
+	margin-left: 10%;
+	color: green;
+	margin-top: 6%;
+}
+p {
+	margin-left: 10%;
+}
+</style>
+</head>
+<body>
+<h1>Pantalla de inicio del gestor de GMC</h1>
+<p>Selecciona una de las opciones del menú de la izquierda para proceder</p>
+<div>
+   <div class="sidenav">
+  <button class="dropdown-btn">Camion<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+      <a href="/crud/nuevoCamion">Nuevo Camion</a>
+      <a href="/crud/listaCamiones">Lista Camiones</a>
+      <a href="/crud/editarCamion">Editar Camion</a>
+    </div>
+  <button class="dropdown-btn">Camionero<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+      <a href="/crud2/nuevoCamionero">Nuevo Camionero</a>
+      <a href="/crud2/listaCamioneros">Lista Camioneros</a>
+      <a href="/crud2/editarCamionero">Editar Camionero</a>
+    </div>
+  <button class="dropdown-btn">Destinatario<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+      <a href="/crud/nuevoDestinatario">Nuevo destinatario</a>
+      <a href="/crud/listaDestinatarios">Lista destinatarios</a>
+      <a href="/crud/editarDestinatario">Editar destinatario</a>
+    </div>
+  <button class="dropdown-btn">Paquete<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+      <a href="/crud4/nuevoPaquete">Nuevo paquete</a>
+      <a href="/crud4/listaPaquetes">Lista paquetes</a>
+      <a href="/crud4/editarPaquete">Editar paquete</a>
+    </div>
+  <button class="dropdown-btn">Provincia<i class="fa fa-caret-down"></i></button>
+  <div class="dropdown-container">
+      <a href="/crud5/nuevoProvincia">Nueva provincia</a>
+      <a href="/crud5/listaProvincias">Lista provincias</a>
+      <a href="/crud5/editarProvincia">Editar provincia</a>
+  </div>
+</div> 
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+</body>
+</html>
